@@ -1,0 +1,130 @@
+:root {
+	--color-teaGreen: #CAE7B9;
+	--color-buff: #F3DE8A;
+	--color-darkSalmon: #EB9486;
+	--color-lightSlateGray: #7E7F9A;
+	--color-cadetGray: #97A7B3;
+	--color-wildBlueYonder: #A1B5D8;
+	--color-cadetBlue: #51A3A3;
+	--color-white: #FFFFFF;
+
+	--boxShadow-drop: 0px 0px 10px 0px rgba(0, 0, 0, 0.25);
+	--boxShadow-inner: inset 0px 0px 5px 0px rgba(126, 127, 154, 1);
+
+	--fontFamily-nums: 'Quantico', sans-serif;
+	--fontWeight-nums: 700;
+
+	--borderRadius-body: 33px 33px 0px 0px;
+	--borderRadius-lcdArea: 15px 15px 0px 0px;
+}
+
+* {
+	margin: 0;
+	padding: 0;
+	font-family: sans-serif;
+	-webkit-box-sizing: border-box;
+	        box-sizing: border-box;
+}
+
+body, html {
+	height: 100%;
+	background: #EBEBEB;
+}
+
+p {
+	font-family: var(--fontFamily-nums);
+	font-size: 1.3em;
+	font-weight: var(--fontWeight-nums);
+	line-height: 1.5em;
+	color: var(--color-white);
+	word-break: break-all;
+}
+
+button {
+	border: none;
+	background: var(--color-teaGreen);
+	color: var(--color-white);
+	outline: none;
+	cursor: pointer;
+}
+
+button:hover {
+	border: 3px solid var(--color-darkSalmon);
+	color: var(--color-lightSlateGray);
+}
+
+#root {
+	height: 100%;
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-orient: vertical;
+	-webkit-box-direction: normal;
+	    -ms-flex-flow: column nowrap;
+	        flex-flow: column nowrap;
+	-webkit-box-pack: center;
+	    -ms-flex-pack: center;
+	        justify-content: center;
+	-webkit-box-align: center;
+	    -ms-flex-align: center;
+	        align-items: center;
+}
+
+#calculator-body {
+	position: relative;
+	max-width: 400px;
+	height: 90%;
+	min-height: 450px;
+	max-height: 584px;
+	background: var(--color-lightSlateGray);
+	border-radius: var(--borderRadius-body);
+}
+
+#lcd-area {
+	height: 25%;
+	max-height: 145px;
+	background: var(--color-cadetGray);
+	border-radius: var(--borderRadius-lcdArea);
+	-webkit-box-shadow: var(--boxShadow-inner);
+	        box-shadow: var(--boxShadow-inner);
+}
+
+#lcd {
+	width: 85%;
+	height: calc(130px/1.5);
+	background: var(--color-teaGreen);
+	border: 6px solid var(--color-buff);
+}
+
+#keyboard-area {
+	height: 70%;
+}
+
+#divide, #multiply, #subtract, #add {
+	background: var(--color-cadetBlue);
+}
+
+#clear {
+	background: var(--color-darkSalmon);
+}
+
+#equals {
+	background: var(--color-wildBlueYonder)
+}
+
+#calculation {
+	font-size: 1.1em;
+}
+
+/* Media Queries */
+
+@media screen and (max-height: 430px) {
+	body, html {
+		height: auto;
+		margin: 2em auto;
+	}
+
+	#calculator-body {
+		height: 584px;
+	}
+}

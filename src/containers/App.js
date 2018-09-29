@@ -48,8 +48,7 @@ class App extends Component {
   decimalHandle = () => {
     this.setState((state) => {
       const regex = /^[^.]*$/;
-      const check = Number(state.calculation.charAt(0));
-      return regex.test(state.value) ? { value: check ? state.value + "." : "0.", calculation: check ? state.calculation + "." : state.calculation + '0.' } : null
+      return regex.test(state.value) ? { value: state.value + ".", calculation: state.calculation + "." } : null
     })
   }
 
